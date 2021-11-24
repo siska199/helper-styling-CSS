@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display : flex;
+            flex-direction : row;
+            justify-content: center;
+        }
+        .bubble-arrow-left{
+            width: 100px;
+            height: 100px;
+            border: solid 2px black;
+            border-radius: 10px;
+            background-color: blue;
+        }
+        .bubble-arrow-left::before {
+            content:"";
+            display: block;
+            width: 0; /*Ketika membuat arrow width and height harus 0*/
+            height: 0; 
+            border-top: 10px solid black;
+            border-bottom: 10px solid black; 
+            border-right:10px solid blue; 
+            position: relative; /*make the triangle can move*/
+            left : -10px;
+            top: 30px;
+
+        }
+
+        .bubble-arrow-right{
+            margin-left: 10px;
+            width:100px;
+            height: 100px;
+            border: solid 4px black;
+            border-radius: 10px;
+            background-color:pink;
+        }
+        
+        .bubble-arrow-right::after{
+            content: "";
+            position:relative;
+            left: 30px;
+            bottom: -120px;
+            border-top: solid 20px black;
+            border-left: solid 20px transparent;
+            border-right: solid 20px transparent;
+            width: 0;
+            height:0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="bubble-arrow-left"></div>
+    <div class="bubble-arrow-right"></div>
+</body>
+</html>

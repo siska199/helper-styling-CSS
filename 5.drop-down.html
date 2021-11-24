@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/da3ee2516a.js" crossorigin="anonymous"></script>
+    <style>
+        body{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        img{
+            width: 70px;
+            height: 70px;
+            cursor: pointer;
+            margin-left: 60px;
+            margin-bottom: 10px;
+        }
+        .menu-icon{
+            background-color: #779ced;
+            border-radius: 10px;
+            padding-right: 20px;
+            padding-top:10px;
+            padding-bottom: 10px;
+            visibility: hidden;
+        }
+        .menu-icon.active{
+            visibility: visible;
+            transition: 0.5ms;
+
+        }
+        .menu-icon::before{
+            content: '';
+            position: relative;
+            width: 0px;
+            height: 0px;
+            top: -40px;
+            left: 80px;
+            border-bottom: solid 15px #779ced;
+            border-left: solid 15px transparent;
+            border-right: solid 15px transparent;
+
+        }
+        a{
+            text-decoration: none;
+            color: white;
+
+        }
+        li{
+            list-style: none;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="drop-down" style="margin-top: 30px;">
+        <img src="avatar-profile.svg" alt="" onclick="dropdown();">
+        <div class="menu-icon">
+            <ul>
+                <li><a href=""><i class="far fa-user-circle"></i> My Profile</a></li>
+                <li><a href=""><i class="far fa-edit"></i> Edit Profile</a></li>
+                <li><a href=""><i class="far fa-envelope"></i> Inbox</a></li>
+                <li><a href=""><i class="fas fa-cog"></i> Settings</a></li>
+                <li><a href=""><i class="far fa-question-circle"></i> Help</a></li>
+                <li><a href=""><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        function dropdown(){
+            const menuToggle = document.querySelector('.menu-icon')
+            menuToggle.classList.toggle('active')
+        }
+    </script>
+</body>
+</html>

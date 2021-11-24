@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face{
+            font-family:'BadaBoom BB';
+            src : url('BADABB.TTF')
+        }
+
+        .part-1{
+            position: absolute;
+            width: 328px;
+            height: 213px;
+            left: 181.12px;
+            top: 154.36px;
+
+            font-family: 'BadaBoom BB';
+            font-style: normal;
+            font-weight: normal;
+            font-size: 200px;
+            line-height: 213px;
+            /* identical to box height */
+            color: #D60000;
+            z-index: 2;
+            transform: rotate(1.62deg);
+        }
+
+        .part-1::after{
+            content: attr(title);
+            -webkit-text-stroke: 42px black;
+            position: absolute;
+            left:-0px; /*Nilai ini penting dispecified agar */
+            z-index: -1;/*Nilainya harus digatif kalo mau ada di belakang*/
+        }
+
+
+        .part-2{
+            position: absolute;
+            width: 414px;
+            height: 77px;
+            left: 121.07px;
+            top: 347.58px;
+
+            font-family: 'BadaBoom BB';
+            font-style: normal;
+            font-weight: normal;
+            font-size: 72px;
+            line-height: 77px;
+            /* identical to box height */
+
+            letter-spacing: -0.03em;
+            color: #FFCB14;
+            transform: rotate(-1.9deg);
+            z-index:2;
+
+        }
+        .part-2::after{
+            content: attr(title);
+            -webkit-text-stroke: 20px black;
+            position: absolute;
+            left: -0px;
+            z-index:-1;
+        }
+    </style>
+</head>
+<body>
+    <div>   
+        <span title="WOW" class="part-1">WOW</span>
+        <span title="WINDOW OF WORLD" class="part-2">WINDOW OF WORLD</span>
+    </div>
+</body>
+</html>
